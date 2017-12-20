@@ -1,0 +1,19 @@
+{
+  "name": "advancedproject7",
+  "version": "1.0.0",
+  "description": "secure web blog built for packt publishing course on advanced node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/packtnode/Advancedproject7.git"
+  },
+  "author": "mohammad hunan chughtai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/packtnode/Advancedproject7/issues"
+  },
+  "homepage": "https://github.com/packtnode/Advancedproject7#readme"
+}
