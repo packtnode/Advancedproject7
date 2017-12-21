@@ -9,10 +9,10 @@ const express 	= require('express'),
 
 /* REQUIRING OUR ROUTE FILES: */
 const baseRoutes	= require('./Controller/Routes/base.routes'),
-	userRoutes  	= require('./Controller/user.routes'),
-	localRoutes 	= require('./Controller/local.routes'),
-	articleRoutes	= require('./Controller/article.routes'),
-	fbRoutes		= require('./Controller/fb.routes');
+	userRoutes  	= require('./Controller/Routes/user.routes'),
+	localRoutes 	= require('./Controller/Routes/local.routes'),
+	articleRoutes	= require('./Controller/Routes/article.routes'),
+	fbRoutes		= require('./Controller/Routes/fb.routes');
 
 /* ADDITIONAL CONFIG AND OTHER SETTINGS: */
 const key = require('./key'),
