@@ -2,7 +2,18 @@
 const Router = require('express').Router(),
 	bcrypt 	 = require('bcryptjs'),
 	User = require('../../Model/user.model'),
-	salt 	 = bcrypt.genSaltSync(10);
+	salt 	 = bcrypt.genSaltSync(10),
+	nodemailer = require('nodemailer'),
+	key = require('../../key');
+
+
+var client = nodemailer.createTransport({
+ service: 'SendGrid',
+ auth: {
+   user: key.sendGrid.username,  
+   pass: key.sendGrid.password  
+}
+});
 
 
 Router.post('/signup',(req,res) => {
@@ -37,7 +48,20 @@ Router.post('/signup',(req,res) => {
 			newuser.save((user) =>{
 				req.session.user = user;
                 res.redirect('/dashboard');
-			});	
+			}).then(() => {
+
+				let email = {   
+					from: key.sendGrid.username, 
+					to: newuser.email,
+					subject: 'Welcome to Node Blogger',
+					html: '<h2>Welcome to Node Blogger</h2><br/><p>Thank you for signing up with node blogger</p>' 
+				};
+				client.sendMail(email, function(err, info){
+					console.log('Message sent: ' + info.response);
+				});
+
+
+			})
 		}
 	}) //end of then
 }) // end of route
