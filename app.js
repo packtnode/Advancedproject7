@@ -38,7 +38,7 @@ app.set('view engine','ejs');
 app.use('/',baseRoutes);
 app.use('/auth/local',localRoutes);
 app.use('/auth/facebook',fbRoutes);
-app.use('/post',postRoutes);
+app.use('/article',articleRoutes);
 app.use('/user',userRoutes);
 
 

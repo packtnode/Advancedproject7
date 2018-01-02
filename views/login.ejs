@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+	<% errors.forEach((error)=>{ %>
+		<p> <%= error %> </p>
+	<% }) %>
+
+	<h1>Login</h1>
+	<form action="/auth/local/login" method="post">
+		<input name="username" placeholder="username"   />
+		<input type="password" name="password" placeholder="password"  />
+		<input type="submit" />
+	</form>
+
+	<a href="/signup"> Don't have an account yet? Signup</a>
+	<br/>
+	<a href="/auth/facebook/">Sign In With Facebook</a>
+
+
+</body>
+</html>

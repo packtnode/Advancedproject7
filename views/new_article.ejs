@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<a href="/dashboard">dashboard</a>
+<a href="/search">search</a>
+<a href="/new_article">create a new article</a>
+<a href="/profile">profile</a>
+
+
+	<form action="/article/new" method="post" id="new-articles-1">
+		<input name="title" placeholder="title" />
+		<br/>
+		<input name="image" placeholder="image link" />
+		<br/>
+		<textarea name="description" placeholder="your articles description"></textarea>
+		<br/>
+		<input name="tags" placeholder="tag">
+		<br/>
+		<input type="submit" />
+	</form>
+</body>
+</html>

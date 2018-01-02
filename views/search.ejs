@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		img{
+			max-height: 200px;
+			width: auto;
+		}
+		body{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+<a href="/dashboard">dashboard</a>
+<a href="/search">search</a>
+<a href="/new_article">create a new article</a>
+<a href="/profile">profile</a>
+
+
+<br/>
+<input id="searcher" type="text" placeholder="search"> <button id="src-btn">Search</button>
+
+	<% articles.forEach((article) =>{ %>
+		<h2> <%= article.title %> </h2>
+		<p> Created By 
+		<a href="/user/profile/<%= article.author.username %>">
+		<%= article.author.username %></a>
+		</p>
+		<img src="<%= article.image %>"  />
+		<p> <%= article.description %> </p>
+		<% article.tags.forEach((tag) => { %>
+				<a href="/search/<%= tag %>"><%= tag %></a>
+		<% }) %>
+	<% }) %>
+
+<script>
+	let srcbtn = document.getElementById('src-btn');
+	srcbtn.addEventListener('click',function(){
+		window.location = "/search/" + document.getElementById('searcher').value;
+	})
+
+</script>
+
+
+</body>
+</html>
