@@ -7,8 +7,8 @@ module.exports = {
 		secret: 'coolnode'
 	},
 	facebook: {
-		client_ID: '143745099679568',
-		client_secret: '70b825827792ce29e57c2468214e66f1'
+		client_ID: '137815490224432',
+		client_secret: '97765f9f37bfd873fe4aed2fcc743b01'
 	},
 	sendGrid: {
 		username: 'app84683014@heroku.com',
